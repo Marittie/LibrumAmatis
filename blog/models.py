@@ -8,7 +8,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 class Book(models.Model):
     """A model to create Book items"""
     book_title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = models.CharField(max_length=200, unique=True,)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_books"
     )
@@ -26,7 +26,7 @@ class Book(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return self.title
+        return self.book_title
 
     def number_of_likes(self):
         """Books likes"""
