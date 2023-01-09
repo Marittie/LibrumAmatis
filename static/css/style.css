@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleways&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Moon+Dance&display=swap');
 
 
 /* Generic Styling */
@@ -6,6 +6,11 @@ body {
     font-family: 'Raleway', sans-serif;
     background-color: whitesmoke;
     color: rgb(40, 134, 68);
+    font-weight: bolder;
+}
+
+a:hover{
+    text-decoration:underline
 }
 
 a {
@@ -13,36 +18,25 @@ a {
     color: rgb(40, 134, 68);
 }
 
-.button {
-    margin-top: 8px;
-    padding: 4px;
-    border-radius: 5px;
-}
-
-.button:hover {
-    background: rgb(220, 170, 82);
-    color: rgb(40, 134, 68);
-    box-shadow: inset 0 0 0 4px rgb(40, 134, 68);
-}
-
 /* Navbar */
 
 .bg-light {
-    background-color: rgb(220, 170, 82) !important;
-    color: rgb(40, 134, 68) !important;
+    background-color: rgb(236, 207, 158) !important;
+    color: rgb(37, 126, 64) !important;
 }
 
 /* Navbar */
 
 .navbar-brand {
-    font-family: Fredoka One, sans-serif;
-    font-size: 3.25rem;
+    font-family: 'Moon Dance', sans-serif;
+    font-size: 4.25rem;
+    font-weight: bolder;
     margin-left: 1rem;
-    color: rgb(40, 134, 68) !important;
+    color: rgb(37, 126, 64) !important;
 }
 
 .nav-link {
-    color: rgb(40, 134, 68) !important;
+    color: rgb(37, 126, 64) !important;
     font-size: 1.25rem
 }
 
@@ -61,8 +55,12 @@ a {
 /* social media links */
 
 .social-links {
-    color: #8d0e14;
+    color: rgb(37, 126, 64);
     font-size: x-large;
+}
+
+.social-links:hover {
+    color: #8d0e14;
 }
 
 .pic-padding {
