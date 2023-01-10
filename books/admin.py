@@ -10,10 +10,10 @@ class BookAdmin(SummernoteModelAdmin):
     search_fields = ['book_title', 'content']
     list_filter = ('updated_on',)
     summernote_fields = ('content')
-    
+
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'book', 'created_on')
-    list_filter = ('created_on')
+    list_filter = ('created_on',)
     search_fields = ('name', 'email', 'body')

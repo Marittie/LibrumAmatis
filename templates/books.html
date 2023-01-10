@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Books</h1>
+        </div>
+    </div>
+    <div class="row">
+
+        <!-- Books Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for book in book_list %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                {% if "placeholder" in book.picture.url %}
+                                <!-- Placeholder image-->
+                                <img class="card-img-top book-page-pic" 
+                                src="#" 
+                                alt="book">
+                                {% else %}
+                                <!-- User image -->
+                                <img class="card-img-top book-page-pic" src="{{ book.picture.url }}" alt="">
+                                {% endif %}
+                                <!-- Book Author-->
+                                <div>
+                                    <p class="author">Author: {{ book.author }}</p>
+                                </div>
+                                <!--link to book detail page -->
+                            <a href="#" class="book-link">
+                                <h2 class="card-title">{{ book.created_on }}</h2>
+                            </a>
+                            <hr>
+                            <!-- date books was updated on and number of likes -->
+                            <p class="card-text h6">{{ book.updated_on}}</p><i
+                                    class=" card-text far fa-heart">{{ book.number_of_likes }}</i>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                <!-- starts a new row after every 3 books posted -->
+                {% if forloop.counter|divisibleby:3 %}
+
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- puts next page button at the bottom of the page when there are more than 6 books on a page-->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+
+{% endblock %}
