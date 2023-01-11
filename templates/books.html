@@ -19,22 +19,23 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                {% if "placeholder" in book.picture.url %}
+                                {% if "placeholder" in book.featured_image.url %}
                                 <!-- Placeholder image-->
                                 <img class="card-img-top book-page-pic" 
-                                src="#" 
-                                alt="book">
+                                src="https://res.cloudinary.com/dqwmxwpay/image/upload/v1673430457/the_alchemist_iy8xxw.jpg" 
+                                alt="the alchemist book">
                                 {% else %}
                                 <!-- User image -->
-                                <img class="card-img-top book-page-pic" src="{{ book.picture.url }}" alt="">
+                                <img class="card-img-top book-page-pic" src="{{ book.featured_image.url }}" alt="">
                                 {% endif %}
                                 <!-- Book Author-->
                                 <div>
-                                    <p class="author">Author: {{ book.author }}</p>
+                                    <p class="image-flash">Author: {{ book.author }}</p>
                                 </div>
                                 <!--link to book detail page -->
                             <a href="#" class="book-link">
-                                <h2 class="card-title">{{ book.created_on }}</h2>
+                                <h2 class="card-title">{{ book.book_title }}</h2>
+                                <h4 class="card-text">{{ book.writer }}</h4>
                             </a>
                             <hr>
                             <!-- date books was updated on and number of likes -->
