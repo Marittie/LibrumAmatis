@@ -23,17 +23,17 @@
                                 <!-- Placeholder image-->
                                 <img class="card-img-top book-page-pic" 
                                 src="https://res.cloudinary.com/dqwmxwpay/image/upload/v1673430457/the_alchemist_iy8xxw.jpg" 
-                                alt="the alchemist book">
+                                alt="the alchemist book's cover">
                                 {% else %}
                                 <!-- User image -->
-                                <img class="card-img-top book-page-pic" src="{{ book.featured_image.url }}" alt="">
+                                <img class="card-img-top book-page-pic" src="{{ book.featured_image.url }}" alt="the alchemist book's cover">
                                 {% endif %}
                                 <!-- Book Author-->
                                 <div>
                                     <p class="image-flash">Author: {{ book.author }}</p>
                                 </div>
                                 <!--link to book detail page -->
-                            <a href="#" class="book-link">
+                            <a href="{% url 'books_detail' book.slug %}" class="book-link">
                                 <h2 class="card-title">{{ book.book_title }}</h2>
                                 <h4 class="card-text">{{ book.writer }}</h4>
                             </a>

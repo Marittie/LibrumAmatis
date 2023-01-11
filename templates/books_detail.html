@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Book detail card -->
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <h1 class="book-title">{{ book.book_title }}</h1>
+                <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                {% if "placeholder" in book.featured_image.url %}
+                <img src="https://res.cloudinary.com/dqwmxwpay/image/upload/v1673430457/the_alchemist_iy8xxw.jpg" alt="the alchemist book's cover">
+                {% else %}
+                <img src=" {{ book.featured_image.url }}" alt="the alchemist book's cover">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <p class="card-text ">
+                    {{ book.content | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

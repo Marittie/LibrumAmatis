@@ -8,6 +8,7 @@ STATUS = ((0, 'Draft'), (1, 'Published'))
 class Book(models.Model):
     """A model to create Book items"""
     book_title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True, default='default_slug')
     writer = models.CharField(max_length=200, unique=True,)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_books"
