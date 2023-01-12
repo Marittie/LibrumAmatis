@@ -2,13 +2,15 @@
 {% load static %}
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <!-- Book detail card -->
 <div class="masthead">
     <div class="container pic-padding">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <h1 class="book-title">{{ book.book_title }}</h1>
-                <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
+                <h3 class="book-subtitle">{{ book.writer }}</h>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in book.featured_image.url %}
@@ -16,6 +18,7 @@
                 {% else %}
                 <img class="border border-light book-detail-pic" src=" {{ book.featured_image.url }}" alt="the alchemist book's cover">
                 {% endif %}
+                <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
             </div>
         </div>
     </div>
@@ -30,8 +33,22 @@
                 <div class="row">
 
                     <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'book_like' book.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="bookpost_id" value="{{book.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="bookpost_id" value="{{book.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
                         
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ book.number_of_likes }} </strong>
+                        <span class="text-secondary">{{ book.number_of_likes }} </span>
+                        </strong>                       
                     </div>
                     <div class="col-1">
                         {% with reviews.count as total_reviews %}
@@ -67,6 +84,16 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
+                {% if user.is_authenticated %}
+
+                <h3>Leave a review:</h3>
+                <p>Posting as: {{ user.username }}</p>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ review_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                </form>
+                {% endif %}
     
             </div>
         </div>
