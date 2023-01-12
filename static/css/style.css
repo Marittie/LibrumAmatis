@@ -90,7 +90,22 @@ a {
 .card {
     width: 50%;
     height: auto;
+    background-color: transparent;
 }
+
+.masthead-text {
+    position:relative;
+    padding: 2rem;
+}
+
+
+.pic-padding {
+    padding: 2rem;
+}
+
+
+
+
 
 
 

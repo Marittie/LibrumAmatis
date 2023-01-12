@@ -15,7 +15,7 @@ class BookDetail(DetailView):
     def get(self, request, slug, *args, **kwargs):
         queryset = Book.objects.filter(status=1)
         book = get_object_or_404(queryset, slug=slug)
-        comments = book.reviews.order_by("-created_on")
+        reviews = book.reviews.order_by("-created_on")
         liked = False
         if book.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -25,7 +25,8 @@ class BookDetail(DetailView):
             "books_detail.html",
             {
                 "book": book,
-               
+                "reviews": reviews,
+                "liked": liked
             }
         
         )
