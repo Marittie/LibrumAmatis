@@ -103,6 +103,22 @@ a {
     padding: 2rem;
 }
 
+.btn-outline-primary {
+    background-color: rgb(236, 207, 158);
+    color: rgb(37, 126, 64);
+    border-color: #8d0e14;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+    background-color: rgb(37, 126, 64);
+    color: rgb(236, 207, 158);
+}
+
+.link {
+    color: rgb(37, 126, 64);
+    text-decoration: none;
+}
 
 
 
