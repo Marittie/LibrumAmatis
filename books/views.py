@@ -1,13 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import (ListView, DetailView, CreateView)
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Book
-from .forms import ReviewForm
+from .forms import ReviewForm, BookForm
 
 
 class BookList(ListView):
     model = Book
-    queryset = Book.objects.filter(status=1).order_by("-created_on")
+    queryset = Book.objects.order_by("-created_on")
     template_name = "books.html"
     paginate_by = 6
 
@@ -35,7 +36,7 @@ class BookDetail(DetailView):
         )
 
     def post(self, request, slug, *args, **kwargs):
-        queryset = Book.objects.filter(status=1)
+        queryset = Book.objects
         book = get_object_or_404(queryset, slug=slug)
         reviews = book.reviews.order_by("-created_on")
         liked = False
@@ -80,3 +81,18 @@ class BookLike(CreateView):
             book.likes.add(request.user)
 
         return HttpResponseRedirect(self.request.META.get('HTTP_REFERER'))
+
+
+class BookCreate(CreateView):
+    """ A view to create a book """
+
+    form_class = BookForm
+    template_name = 'create_book.html'
+    success_url = "/books/books/"
+    model = Book
+
+    def form_valid(self, form):
+        """ If form is valid return to Add a book """
+        form.instance.author = self.request.user
+        messages.success(self.request, 'Book posted successfully')
+        return super(BookCreate, self).form_valid(form)
