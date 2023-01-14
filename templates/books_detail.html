@@ -26,11 +26,17 @@
                <div class="col-md-3 float-right ">
                   <span>
                     <a href="{% url 'book_delete' book.slug %}" class="delete small-icon"
-                    aria-label="Click to delete idea">
+                    aria-label="Click to delete a Book">
                     <i class="far fa-trash-alt fa-1x"></i></a>
                   </span>
+            <!-- Edit Book -->
+                  <span>
+                    <a href="{% url 'book_edit' book.slug %}" class="edit small-icon" aria-label="Click to edit book">
+                    <i class="far fa-edit fa-1x"></i></a>
+                   </span>
+               </div>
+            </div>
                 {% endif %}
-
             </div>
         </div>
     </div>

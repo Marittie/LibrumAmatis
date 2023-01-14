@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import (ListView, DetailView, CreateView, DeleteView)
+from django.views.generic import (ListView, DetailView, CreateView, DeleteView, UpdateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -106,4 +106,24 @@ class BookDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = "/books/books/"
 
     def test_func(self):
+        return self.request.user == self.get_object().author
+
+
+class BookEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """ A view to edit a book """
+
+    Model = Book
+    form_class = BookForm
+    success_url = "/books/books/"
+    template_name = "book_edit.html"
+    queryset = Book.objects
+
+    def form_valid(self, form):
+        """ If form is valid return Book page"""
+        self.success_url + str(self.object.slug) + '/'
+        messages.success(self.request, 'Book updated successfully')
+        return super().form_valid(form)
+
+    def test_func(self):
+        """ A function to test if the user is the author """
         return self.request.user == self.get_object().author

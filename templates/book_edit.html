@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <!-- Edit a Book form heading and information -->
+    <h1>Edit your Book</h1>
+    <p>If you have any updates or you want to change something to your existing book, please update them here.</p>
+    <!-- Edit Book form-->
+    <form class="edit_book_form" action="{% url 'book_edit' book.id %}" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.id }}
+        {{ form|crispy }}
+        {{ form.media }}
+
+        <input class="button" type="submit" value="Submit">
+    </form>
+
+</div>
+{% endblock %}
