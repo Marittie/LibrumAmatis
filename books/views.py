@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import (ListView, DetailView, CreateView)
+from django.views.generic import (ListView, DetailView, CreateView, DeleteView)
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Book
@@ -16,7 +17,7 @@ class BookList(ListView):
 class BookDetail(DetailView):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Book.objects.filter(status=1)
+        queryset = Book.objects
         book = get_object_or_404(queryset, slug=slug)
         reviews = book.reviews.order_by("-created_on")
         liked = False
@@ -96,3 +97,13 @@ class BookCreate(CreateView):
         form.instance.author = self.request.user
         messages.success(self.request, 'Book posted successfully')
         return super(BookCreate, self).form_valid(form)
+
+
+class BookDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ A view to delete a book """
+    model = Book
+    template_name = 'book_delete.html'
+    success_url = "/books/books/"
+
+    def test_func(self):
+        return self.request.user == self.get_object().author

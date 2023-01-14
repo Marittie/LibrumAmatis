@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+<div class="row col-md-8 offset-md-2 delete-book">
+    <div class="col-md-8 offset-md-2 p-3">
+        <!-- Delete Book heading -->
+        <h1 class="text-center">Delete the Book</h1>
+        <div class="d-flex justify-content-center pt-3">
+            <!-- Delete Book confirmation form-->
+            <form method="post" class="text-center p-5">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ book.book_title }}"?</p>
+                <input type="submit" value="Confirm" class="button">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -12,6 +12,7 @@
                 <h1 class="book-title">{{ book.book_title }}</h1>
                 <h3 class="book-subtitle">{{ book.writer }}</h>
             </div>
+
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in book.featured_image.url %}
                 <img class="border border-light book-detail-pic">
@@ -19,6 +20,17 @@
                 <img class="border border-light book-detail-pic" src=" {{ book.featured_image.url }}" alt="the alchemist book's cover">
                 {% endif %}
                 <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
+                <!-- Delete a Book -->
+                {% if book.author == request.user%}
+            <div class="row-md-3">
+               <div class="col-md-3 float-right ">
+                  <span>
+                    <a href="{% url 'book_delete' book.slug %}" class="delete small-icon"
+                    aria-label="Click to delete idea">
+                    <i class="far fa-trash-alt fa-1x"></i></a>
+                  </span>
+                {% endif %}
+
             </div>
         </div>
     </div>
