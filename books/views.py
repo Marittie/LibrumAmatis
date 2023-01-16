@@ -120,7 +120,7 @@ class BookEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def form_valid(self, form):
         """ If form is valid return Book page"""
-        self.success_url + str(self.object.slug) + '/'
+        self.success_url + str(self.object.pk) + '/'
         messages.success(self.request, 'Book updated successfully')
         return super().form_valid(form)
 

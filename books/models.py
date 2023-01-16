@@ -1,12 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
+from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 
 class Book(models.Model):
     """A model to create Book items"""
     book_title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, default='default_slug')
+    slug = models.SlugField(max_length=200, null=False, unique=True)
     writer = models.CharField(max_length=200, unique=True,)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_books"
@@ -18,6 +20,17 @@ class Book(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(
         User, related_name='books_like', blank=True)
+
+    def __str__(self):
+        return self.book_title
+
+    def get_absolute_url(self):
+        return reverse("books_detail", kwargs={"slug": self.slug})
+
+    def save(self, *args, **kwargs):  # new
+        if not self.slug:
+            self.slug = slugify(self.book_title)
+        return super().save(*args, **kwargs)
 
     class Meta:
         """Created on order"""
