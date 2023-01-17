@@ -6,15 +6,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <h1>Books</h1>
-        </div>
-    </div>
-    <div class="row">
-
-        <!-- Books Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
+       <!-- Books Column -->
                 {% for book in book_list %}
                     <div class="col-md-4">
                         <div class="card mb-4">
@@ -22,11 +14,11 @@
                                 {% if "placeholder" in book.featured_image.url %}
                                 <!-- Placeholder image-->
                                 <img class="card-img-top book-page-pic" 
-                                src="https://res.cloudinary.com/dqwmxwpay/image/upload/v1673430457/the_alchemist_iy8xxw.jpg" 
-                                alt="the alchemist book's cover">
+                                src="" 
+                                alt="book's cover">
                                 {% else %}
                                 <!-- User image -->
-                                <img class="card-img-top book-page-pic" src="{{ book.featured_image.url }}" alt="the alchemist book's cover">
+                                <img class="card-img-top book-page-pic" src="{{ book.featured_image.url }}" alt="book's cover">
                                 {% endif %}
                                 <!-- Book Author-->
                                 <div>
@@ -40,9 +32,7 @@
                             <hr>
                             <!-- date books was updated on and number of likes -->
                             <p class="card-text h6">{{ book.updated_on}}</p><i
-                                    class=" card-text far fa-heart">{{ book.number_of_likes }}</i>
-
-                                
+                                    class=" card-text far fa-heart">{{ book.number_of_likes }}</i>   
                             </div>
                         </div>
                     </div>
@@ -53,8 +43,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-            </div>
-        </div>
     </div>
     <!-- puts next page button at the bottom of the page when there are more than 6 books on a page-->
     {% if is_paginated %}

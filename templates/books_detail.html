@@ -7,24 +7,18 @@
 <!-- Book detail card -->
 <div class="masthead">
     <div class="container pic-padding">
-        <div class="row g-0">
+        <div class="row">
             <div class="col-md-6 masthead-text">
                 <h1 class="book-title">{{ book.book_title }}</h1>
                 <h3 class="book-subtitle">{{ book.writer }}</h>
+        <div class="col book-author">
+            <div class="col col-author">
+                <p class="author">{{ book.author }} | {{ book.created_on }}</p>
             </div>
-
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in book.featured_image.url %}
-                <img class="border border-light book-detail-pic">
-                {% else %}
-                <img class="border border-light book-detail-pic" src=" {{ book.featured_image.url }}" alt="the alchemist book's cover">
-                {% endif %}
-                <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
-                <!-- Delete a Book -->
+            <div class="col ">
+            <!-- Delete Book -->
                 {% if book.author == request.user%}
-            <div class="row-md-3">
-               <div class="col-md-3 float-right ">
-                  <span>
+                <span>
                     <a href="{% url 'book_delete' book.slug %}" class="delete small-icon"
                     aria-label="Click to delete a Book">
                     <i class="far fa-trash-alt fa-1x"></i></a>
@@ -34,16 +28,25 @@
                     <a href="{% url 'book_edit' book.id %}" class="edit small-icon" aria-label="Click to edit book">
                     <i class="far fa-edit fa-1x"></i></a>
                    </span>
-               </div>
+                   {% endif %}
+                </div>
             </div>
+        </div>
+
+            <div class="col-md-6 masthead-image">
+                {% if "placeholder" in book.featured_image.url %}
+                <img class="border border-light book-detail-pic card-img-top">
+                {% else %}
+                <img class="border border-light book-detail-pic" src=" {{ book.featured_image.url }}" alt="book's cover">
                 {% endif %}
+
             </div>
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <p class="card-text ">
                     {{ book.review | safe }}
