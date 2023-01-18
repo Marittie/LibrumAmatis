@@ -150,24 +150,9 @@ a {
     bottom: 0;
 }
 
-@media only screen and (max-width: 767px) {
-
-    .masthead-text {
-        position:relative;
-        padding: 3rem;
-    }
-
-
-    .book-title,
-    .book-subtitle,
-    .author {
-        font-size: smaller;
-    }
-
-
-
-
-
+#edit-book-form {
+    max-width: 100%;
+}
 
 
 
@@ -183,9 +168,35 @@ a {
     }
 }
 
+@media only screen and (max-width: 405px) {
+    .navbar-brand {
+         font-size: 2rem;
+        }
+
+}
+
+
 @media only screen and (max-width: 767px) {
     .card {
         width: 100%;
         height: auto;
+}
+    .book-page-pic{
+       width: 50%;
+       height: auto;
+       align-items: center;
+}
+
+.masthead-text {
+    position:relative;
+    padding: 3rem;
+}
+
+
+.book-title,
+.book-subtitle,
+.author {
+    font-size: smaller;
+
 }
 }

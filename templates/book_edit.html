@@ -7,6 +7,7 @@
     <h1>Edit your Book</h1>
     <p>If you have any updates or you want to change something to your existing book, please update them here.</p>
     <!-- Edit Book form-->
+    <div id="edit-book-form">
     <form class="edit_book_form" action="{% url 'book_edit' book.id %}" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
@@ -17,6 +18,6 @@
 
         <input class="btn btn-outline-primary" type="submit" value="Submit">
     </form>
-
+   </div>
 </div>
 {% endblock %}
