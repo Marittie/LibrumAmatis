@@ -1,108 +1,209 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Librum Amatis
 
-Welcome Marittie,
+Librum Amatis is a book sharing site for anyone that has passion in reading. It provides users a clear and simple way to browse and share books.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+You can reach the live site [here](https:)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Responsive Screens](/)
 
-## Gitpod Reminders
+# Table of contents   
+- [Librum Amatis](#librum-amatis)
+- [Table of contents](#table-of-contents)
+- [User-Experience-Design](#user-experience-design)
+  * [Site Goals](#site-goals)
+  * [Agile Planning](#agile-planning)
+  * [Scope](#scope)
+  * [Structure](#structure)
+    + [Librum Amatis Features](#librum-amatis-features)
+    + [Home Page](#home-page)
+    + [Footer](#footer)
+    + [Books](#books-page)
+    + [Book Detail](#books-detail)
+    + [Sign in, log in, log out](#sign-in--log-in--log-out)
+    + [Add a Book](#create-idea)
+    + [Edit and Delete a Book](#edit-and-delete-book)
+- [Wireframes](#wireframes)
+- [Database](#database)
+- [Security](#security)
+- [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typogropny](#typogropny)
+  * [Imagery](#imagery)
+- [Technologies](#technologies)
+  * [External Python Modules](#external-python-modules)
+- [Testing](#testing)
+  * [Functional Testing](#functional-testing)
+    + [Navigation Links](#navigation-links)
+    + [Footer](#footer-1)
+    + [Sign Up Page](#sign-up-page)
+    + [Log out Page](#log-out-page)
+    + [Log in](#log-in)
+    + [Add a Book Page](#create-book-page)
+    + [Edit Book](#edit-book)
+    + [Delete a Book](#delete-a-book)
+    + [Review on a book](#review-on-a-book)
+    + [User test](#user-test)
+  * [Accessibility](#accessibility)
+  * [Validator Testing](#validator-testing)
+  * [PP8 Validator](#pp8-validator)
+  * [Lighthouse Report](#lighthouse-report)
+- [Responsiveness](#responsiveness)
+- [Bugs](#bugs)
+- [Deployment](#deployment)
+- [References](#references)
+- [Acknowledgements](#acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# User-Experience-Design
 
-`python3 -m http.server`
+## Site Goals
 
-A blue button should appear to click: _Make Public_,
+The site is aimed at anyone that is in search of a new book to read and to share the loved ones already read.  Without signing in the user can see the book. They wile be able, once registered to log on and share books the loved to read and review on other book already present.  They will also be able to edit and delete their books.
 
-Another blue button should appear to click: _Open Browser_.
+## Agile Planning
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This project was developed using agile methodologies.Github issues were used to create the User stories and group them accordingly. 
 
-A blue button should appear to click: _Make Public_,
+My kanban board was made using github projects which can be viewed [here](https://github.com/users/Marittie/projects/6/views/1).  Each view can be clicked in to obtain further information.
 
-Another blue button should appear to click: _Open Browser_.
+![kanban](static/images/Kanban.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## User Stories
 
-To log into the Heroku toolbelt CLI:
+[#1] As a Site User I can view a paginated list of posts so that easily navigate to a post to view.
+[#2] As a Site User I can register to the blog so that interact and add new post.
+[#3] As a Site User I can login and logout so that I can comment, edit and add posts.
+[#4] As a Site User I can Like/Unlike posts so that I can interact with the content.
+[#5] As a Site User I can review a post so that I can interact with the posts.
+[#6] As a Site Used/Admin I can view the number of likes on each post so that I can see which is the most liked book.
+[#7] As a Site User/Admin I can view reviews on an individual book so that I can read the conversation.
+[#8] As a Site User/Admin I can Suggest/Add a new book so that I can laeve a review for others to read.
+[#9] As a Site User/Admin I can edit my posts so that I can make corrections or be more detailed about it.
+[#10] As a Site User/Admin I can delete my post so that It is not visible anymore.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Scope
+- Responsive Design
+- Home page with information about Librum Amatis
+- Ability to perform CRUD functionality on books
+- Restricted features for not logged in users
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Structure
 
-------
+### Librum Amatis Features
 
-## Release History
+Navbar
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The user is able to navigate easily around the site from any devise
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Navigation Menu
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+When the user is not logged in the navigation menu links to the Home page, Book page, Sign up anf Log in.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Navbar before login](/static/images/navbar.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Once the user has signed in the navigation menu changes to Home, Books, Add a Book and Log out.
+The user will also receive a toast message saying they have successfully signed in.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Navbar after login](/static/images/navbar-signed-in.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The sign in, log in, log out pages were made using allauth.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+on smaller devices, the menu options collapse into a button
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Mobile NavBar](/static/images/collapse-navbar.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Home Page
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The front page contains a hero image of an open Book. This will make it evident to the user that the website is about books.
+The user will find a clear explaination about the website.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Home Page](/static/images/home-page.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Footer
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The Footer has been added to the bottom of the site and contains links to social media sites so that users can also share their books and promote the site via social media.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Footer](/static/images/footer.png
 
-------
+### Books
 
-## FAQ about the uptime script
+Anybody can use the website to see the Books, they are shown in the Books page with the Books title, writer and book's covers in rows of 3. The boos Title is a link to open up each Book with further information about it.
 
-**Why have you added this script?**
+![Books Page](/static/images/list-of-books.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Book Detail 
 
-**How will this affect me?**
+Each Book title is a link which opens up to a full page which contains the book's cover, and reviews about it.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Book Cover](/static/images/book-detail.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+Logged-on users can also comment on and like the books.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+![Like-Review](/static/images/like-and-review.png)
 
-**So….?**
+### Sign in, log in, log out
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Users can log in and out using various forms and confirmation pages. These forms were made using allauth and edited using bootstrap.
 
-**Can I opt out?**
+![Sign in page](/static/images/log-in.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Sign up Page](/static/images/form-to-sign-up.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+![Sign out page](/static/images/log-out.png)
 
-**Anything more?**
+### Add a Book
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Once the user is logged in they can add their own favourite books using the Add a Book form.  The forms were made using crispy forms which were used in conjunction with bootstrap.
 
----
+![Create idea form](/static/images/form-to-add-a-book.png)
 
-Happy coding!
+### Edit and Delete a Book
+
+The creator of a Book will be able to view  the edit and delete icons on their book detail page.  The edit button will take them to the Add a Book form but it will be pre-populated with information that is already saved. The user can then update the information and save it again where they will be redirected back to the Book page.
+
+![Edit Book](/static/images/edit-book.png)
+
+The delete button will take the user to a confirmation page asking them to confirm they wish to delete that idea.  Once an idea is deleted all comments will be deleted with it.
+
+![Delete Book](/static/images/delete-the-book.png)
+
+The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensure that only the idea creator who is logged in can update or delete their Books.
+
+# Wireframes
+
+Home Page
+
+![Home page wireframe](/static/images)
+
+Sign Up
+
+![Sign up wireframe](/static/images)
+
+Log In
+
+![Log in wireframe](/static/images)
+
+Log out
+
+![log out wireframe](/static/images)
+
+Books Page
+
+![Books page wireframe](/static/images)
+
+book Detail
+
+![Book Detail wireframe](/static/images)
+
+Create/Edit Book Form
+
+![Create/Edit Book wireframe](/static/images)
+
+Delete Book Conirmation
+
+![Delete Book wireframe](
+
+
+
+
+
+
