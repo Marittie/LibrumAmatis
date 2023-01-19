@@ -203,6 +203,32 @@ Delete Book Conirmation
 ![Delete Book wireframe](
 
 
+# Database
+
+The data was designed to give the user CRUD functionality once signed in. Books are connected to the author by foreign key which allows users to edit and delete Books connected to their account. 
+
+# Security
+
+Views were secured by using the django based view mixin, UserPassesTestMixin.  A test function was created to use the mixin and checks that the user is authorised to access the page.  an if statement is also used in books_detail.html to hide the delete and edit buttons if the user is not authorised.  
+
+Environment variables were stored in an env.py file for security purposes to ensure no secret keys, api keys or sensitive information were added to the repository.  These variables were added to heroku config vars within the project.
+
+# Design
+
+## Colour Scheme
+
+I opted for a simple colour scheme.  It needed to be gender neutral and although the site is about children it is aimed at adults so I wanted a more adult feel to it.  I also wanted it to be neutral so that the user ides stood out.  with this in mind, I went for a background colour of #041121
+
+and a text colour of rgb(237, 233, 249.
+
+![Text colour](/static/images/text-colour-1.png)
+
+## Typogropny
+
+I used Yusei Magic for the body of the site and Ranchers for the Kidsbored heading.
+
+I downloaded these from google fonts and imported them into the style sheet
+
 
 
 
