@@ -2,7 +2,7 @@
 
 Librum Amatis is a book sharing site for anyone that has passion in reading. It provides users a clear and simple way to browse and share books.
 
-You can reach the live site [here](https:)
+You can reach the live site [here](https://librum-amatis.herokuapp.com/)
 
 ![Responsive Screens](/)
 
@@ -376,5 +376,9 @@ Expected outcome: The review will appear in the review section on top of the rev
 
 The outcome works as expected.
 
+## Accessibility
 
+I used the [Wave Accessibility](https://wave.webaim.org/)tool to check for aid accessibility testing.
+
+All pages came up with zero errors.
 
