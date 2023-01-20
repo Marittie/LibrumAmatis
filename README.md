@@ -30,7 +30,6 @@ You can reach the live site [here](https:)
   * [Typogropny](#typogropny)
   * [Imagery](#imagery)
 - [Technologies](#technologies)
-  * [External Python Modules](#external-python-modules)
 - [Testing](#testing)
   * [Functional Testing](#functional-testing)
     + [Navigation Links](#navigation-links)
@@ -217,17 +216,59 @@ Environment variables were stored in an env.py file for security purposes to ens
 
 ## Colour Scheme
 
-I opted for a simple colour scheme.  It needed to be gender neutral and although the site is about children it is aimed at adults so I wanted a more adult feel to it.  I also wanted it to be neutral so that the user ides stood out.  with this in mind, I went for a background colour of #041121
-
-and a text colour of rgb(237, 233, 249.
-
-![Text colour](/static/images/text-colour-1.png)
+I opted for a simple colour scheme.  It needed to be neutral and relaxing for the eye . I also wanted it to be neutral so that the user books stood out.  with this in mind, I went for a background colour of whitesmoke and a text colour of a shade of green
 
 ## Typogropny
 
-I used Yusei Magic for the body of the site and Ranchers for the Kidsbored heading.
+I used 'Raleway' for the body of the site and  'Moon Dance' for the  heading.
 
-I downloaded these from google fonts and imported them into the style sheet
+I downloaded these from google fonts and imported them into the style sheet.
+
+## Imagery  
+
+The placeholder image was taken from pexels and is royalty free.  I chose a generic picture of an open book.  It is bright and relaxing.
+
+# Technologies
+
+- HTML
+  - The structure of the site was made using HTML
+- CSS
+  - The website was styled using CSS in an external stylesheet 
+- Python 
+  - Python was the main programming language used within the django app
+- Github
+  - Source code was hosted in Github
+- Git
+  - Git was used to write, commit and push code during development 
+- Font Awesome
+  - Various Font Awesome icons were used throughout the site
+- Balsamiq
+  - Balsamiq wireframes were used to plan 
+- javascript
+  - I used a very small amount of javascript to make the toast messages disappear
+
+# Testing
+
+## Functional Testing
+
+### Navigation Links
+
+Testing was performed on on all navigation links throughout the site.  I achieved this by clicking on each link to ensure it went to the correct place.
+
+Librum Amatis Logo => index.html
+Home page => index.html
+Books => books.html
+Book Title => book_detail.html
+Delete Button => book_delete.html
+Edit Button => book_edit.html
+Edit Button Submit Button => books.html
+Sign Up => signup.html
+Add a Book = > create_book.html
+Add a Book Submit Button => books.html
+Log In => login.html
+Log Out => logout.html
+
+All navigation links worked as expected
 
 
 
