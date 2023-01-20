@@ -270,7 +270,112 @@ Log Out => logout.html
 
 All navigation links worked as expected
 
+### Footer
 
+All the font awesome icons in the footer opened to their respective websites, in a new window, as expected.
+
+### Sign Up Page
+
+Testing was taken out to ensure a user could sign up to the website.
+Steps:
+- Navigate to [Librum Amatis](https://librumamatis.herokuapp.com/)
+- Navigate to the Sign Up page
+- Enter User Name and Password, email is optional
+- Click Sign Up
+
+Expected outcome: User is redirected to the home page.  The Navbar changed to show the Add a Book option and log out option.
+Actual outcome: User is redirected to the home page.  The Navbar changed to show the Add a Book potion and log out option.
+
+### Log out Page
+
+Testing was taken out to ensure a user could log out of the website.
+Steps:
+- Navigate to Log Out page
+- Click Confirm button
+
+Expected outcome: User is taken back to the homepage with the Add a Book option hidden and the Sign up option showing.
+Actual outcome: User is taken back to the homepage with the Add a Book option hidden and the Sign up option showing.
+
+### Log in
+
+Testing was taken out to ensure a user could log in to the website.
+Steps:
+- Navigate to [Librum Amatis](https://librumamatis.herokuapp.com/)
+- Navigate to Log In page
+- Enter User Name and Password
+- Click Sign in
+
+Expected outcome: User is redirected to the home page.  The Navbar changes to show the Add a Book option and log out options. A message appears to say they have successfully logged in.
+Actual outcome: User is redirected to the home page.  The Navbar changed to show the Add a book option and log out option. A message appears to say they have successfully logged in.
+
+### Add a Book Page
+
+Testing was taken out to ensure the user could create a new book.
+
+Assuming user is already logged in
+Steps:
+- Navigate to Add a Book page
+- Complete form
+  - Book Title
+  - Writer
+  - Upload Image (optional)
+  - Review (optional)
+- Click Submit
+
+  Expected Outcome if all fields are filled in correctly the user will be redirected to the Books page where they can view their book. 
+  Expected outcome if the fields are not filled in correctly: A notice to complete the field appears and the cursor goes to the field that needs to be completed.
+
+  Both of these outcomes happened correctly when tested.
+
+### Edit Idea
+
+Tested to ensure the user could edit their book.
+
+Assuming the user is logged in
+Steps:
+- Navigate to the Books page
+- Click on the Book Title
+- If the user is the Author of the post, they will see a delete button and an Edit button under the Book title
+- Click the edit button
+- Update the fields you wish to update
+- Click Submit
+
+Expected outcome:  The user will be redirected back to the Books page which will show the new information.
+The outcome was as expected.
+
+### Delete a Book
+
+Tested to ensure a user could delete their book.
+
+Assuming the user is logged in
+Steps:
+- Navigate to the Books page
+- Click on the Book Title
+- If the user is the Author of the post, they will see a delete button and an Edit button under the Book Title
+- Click the delete button
+- User is taken to a Delete confirmation page asking them if their wish to delete that book showing the Book title.
+- Click Submit
+
+Expected outcome:  The user will be redirected back to the Books page and the book along with the review will be deleted.
+
+The outcome was as expected.
+
+### Review on a book
+
+First I checked the review section when the user is Logged out.
+As expected there is no option to enter a review at all.  You can view other people’s review but the box to write your own review is hidden.
+
+If the user is logged in:
+Steps
+- Navigate to Books
+- Click on the Book Title
+- scroll down to the review section.
+- Write your review in the comments box
+- Click submit
+
+Expected outcome: The review will appear in the review section on top of the review box.
+
+The outcome works as expected.
 
 
 
