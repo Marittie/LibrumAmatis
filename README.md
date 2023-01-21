@@ -4,7 +4,7 @@ Librum Amatis is a book sharing site for anyone that has passion in reading. It 
 
 You can reach the live site [here](https://librum-amatis.herokuapp.com/)
 
-![Responsive Screens](/)
+![Responsive Screens](/static/images/responsive-design.png)
 
 # Table of contents   
 - [Librum Amatis](#librum-amatis)
@@ -378,7 +378,67 @@ The outcome works as expected.
 
 ## Accessibility
 
-I used the [Wave Accessibility](https://wave.webaim.org/)tool to check for aid accessibility testing.
+I used the [Wave Accessibility](https://wave.webaim.org/) tool to check for aid accessibility testing.
 
 All pages came up with zero errors.
 
+## PP8 Validator
+
+
+
+
+
+
+
+# Responsiveness
+
+I checked the website for responsiveness on all devices from 320px and up.  I checked on Chrome, Edge, Firefox and Opera browers.
+
+I did this by using developer tools and resising the website to down to 320px.
+
+As expected there were no responsiveness issues.
+
+# Bugs
+
+No Bugs were found.
+
+# Deployment
+
+To deploy my site to Heroku I followed the following steps
+
+- Navigate to heroku and create/log into account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name (kids-bored)
+- Select region and click create app (europe)
+- Click the resources tab and search for Heroku Postgres
+- Select hobby dev and continue
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (This should already exist with add on of postgres)
+  - EMAIL_HOST_USER: (email address)
+  - EMAIL_HOST_PASS: (email app password)
+  - CLOUNDINARY_URL: (cloudinary api url)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repository you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click Deploy
+
+The app should now be deployed
+
+# References
+
+- I followed the Code Institute Blog walkthrough to start my project off.
+- I used the django documentation 
+- I used the summernote documentation
+- I used the bootstrap documentation
+
+# Acknowledgements
+
+I want to thank:
+
+- The Tutor Support for the enormous help during struggling times.
+- My friends for testing the Web site.
+- My Business Partner for covering me during this time.
