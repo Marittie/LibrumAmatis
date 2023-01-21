@@ -217,7 +217,7 @@ Environment variables were stored in an env.py file for security purposes to ens
 
 I opted for a simple colour scheme.  It needed to be neutral and relaxing for the eye . I also wanted it to be neutral so that the user books stood out.  with this in mind, I went for a background colour of whitesmoke and a text colour of a shade of green
 
-## Typogropny
+## Typography
 
 I used 'Raleway' for the body of the site and  'Moon Dance' for the  heading.
 
