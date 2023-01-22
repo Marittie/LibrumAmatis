@@ -384,17 +384,19 @@ All pages came up with zero errors.
 
 ## PP8 Validator
 
+All pages were run through the [PEP8 Validator  ](http://pep8online.com/).
 
+No errors from codes written by me.
 
+## Lighthouse Report
 
-
-
+The lighthouse report initially showed a low score on performance.  I compressed my hero image which fixed the problem.
 
 # Responsiveness
 
-I checked the website for responsiveness on all devices from 320px and up.  I checked on Chrome, Edge, Firefox and Opera browers.
+I checked the website for responsiveness on all devices from 320px and up.  I checked on Chrome, Edge, Firefox and Opera browsers.
 
-I did this by using developer tools and resising the website to down to 320px.
+I did this by using developer tools and resizing the website to down to 320px.
 
 As expected there were no responsiveness issues.
 
