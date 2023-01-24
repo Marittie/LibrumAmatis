@@ -170,35 +170,35 @@ The delete and edit views use LoginRequiredMixin and UserPassesTestMixin to ensu
 
 Home Page
 
-![Home page wireframe](/static/images)
+![Home page wireframe](/static/images/home-page-wf.png)
 
 Sign Up
 
-![Sign up wireframe](/static/images)
+![Sign up wireframe](/static/images/sign-up-wf.png)
 
 Log In
 
-![Log in wireframe](/static/images)
+![Log in wireframe](/static/images/sign-in-wf.png)
 
 Log out
 
-![log out wireframe](/static/images)
+![log out wireframe](/static/images/sign-out-wf.png)
 
 Books Page
 
-![Books page wireframe](/static/images)
+![Books page wireframe](/static/images/books-page-wf.png)
 
 book Detail
 
-![Book Detail wireframe](/static/images)
+![Book Detail wireframe](/static/images/book-detail-wf.png)
 
 Create/Edit Book Form
 
-![Create/Edit Book wireframe](/static/images)
+![Create/Edit Book wireframe](/static/images/add%3Aedit-book-wf.png)
 
 Delete Book Conirmation
 
-![Delete Book wireframe](
+![Delete Book wireframe](/static/images/delete-book-wf.png)
 
 
 # Database
@@ -386,7 +386,7 @@ All pages came up with zero errors.
 
 All pages were run through the [PEP8 Validator  ](http://pep8online.com/).
 
-No errors from codes written by me.
+No errors from codes written by me. Some errors showing about the django forms codes.
 
 ## Lighthouse Report
 
