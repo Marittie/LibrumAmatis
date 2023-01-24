@@ -150,12 +150,9 @@ a {
     bottom: 0;
 }
 
-#edit-book-form {
+input {
     max-width: 100%;
 }
-
-
-
 
 /* Media Screens */
 
