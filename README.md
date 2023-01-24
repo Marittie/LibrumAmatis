@@ -277,7 +277,7 @@ All the font awesome icons in the footer opened to their respective websites, in
 
 Testing was taken out to ensure a user could sign up to the website.
 Steps:
-- Navigate to [Librum Amatis](https://librumamatis.herokuapp.com/)
+- Navigate to [Librum Amatis](https://librum-amatis.herokuapp.com/)
 - Navigate to the Sign Up page
 - Enter User Name and Password, email is optional
 - Click Sign Up
