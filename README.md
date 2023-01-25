@@ -196,7 +196,7 @@ Create/Edit Book Form
 
 ![Create/Edit Book wireframe](/static/images/add%3Aedit-book-wf.png)
 
-Delete Book Conirmation
+Delete Book Confirmation
 
 ![Delete Book wireframe](/static/images/delete-book-wf.png)
 

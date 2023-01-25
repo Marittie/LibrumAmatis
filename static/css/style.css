@@ -35,6 +35,10 @@ a {
     color: rgb(37, 126, 64) !important;
 }
 
+.navbar-brand:hover{
+    text-decoration: none;
+}
+
 .nav-link {
     color: rgb(37, 126, 64) !important;
     font-size: 1.25rem
